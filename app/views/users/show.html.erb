@@ -1,0 +1,11 @@
+<div class = "user">
+<%= @user.email %>
+</div>
+<div class = "posts">
+	<% @user.posts.each do |post| %>
+		<div class = "col-md-4">
+			<%= image_tag(post.image.url(:medium)) %>
+			<%= post.caption %>
+		</div>
+	<% end %>
+</div>

@@ -15,3 +15,15 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import url(https://fonts.googleapis.com/css?family=Satisfy);
+
+
+.navbar-brand {
+	font-family: 'Satisfy', cursive;
+	font-size: 24px;
+
+}
+
+.navbar > .container-fluid .navbar-brand {
+	margin-left: 30px;
+}
