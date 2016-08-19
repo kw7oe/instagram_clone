@@ -4,28 +4,36 @@
 	</div>
 	<div class = "details">
 		<h3><%= @user.username %></h3>
+		<% if current_user == @user %>
 		<%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-default edit' %>
-		<p><%= @user.biography %></p>		
+		<% else %>
+			<%= render 'follow_form' %>
+		<% end %>
+		<p><%= @user.biography %></p>	
+		<p><%= @user.following.count %></p>
+		<p><%= @user.followers.count %></p>	
 	</div>
 </div>
 <div class = "posts">
 	<% @user.posts.each do |post| %>
-	<%= link_to post do %>
-		<div class = "post col-xs-4">
-			<%= image_tag(post.image.url(:medium)) %>
-			<div class = "bg-features">	
-				<div class = "features">
-					<div class = "likes">
-						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
-						<%= post.votes_for.size %>
-					</div>
-					<div class = "comments">
-						<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
-						0
+		<%= link_to post do %>
+			<div class = "col-xs-4">
+					<div class = "post">
+					<%= image_tag(post.image.url(:medium)) %>
+					<div class = "bg-features">	
+						<div class = "features">
+							<div class = "likes">
+								<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+								<%= post.votes_for.size %>
+							</div>
+							<div class = "comments">
+								<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+								0
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	<% end %>
+		<% end %>
 	<% end %>
 </div>
