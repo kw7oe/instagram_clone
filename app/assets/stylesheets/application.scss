@@ -17,13 +17,44 @@
 @import "bootstrap";
 @import url(https://fonts.googleapis.com/css?family=Satisfy);
 
-
-.navbar-brand {
-	font-family: 'Satisfy', cursive;
-	font-size: 24px;
-
+body {
+	background-color: #fafafa;
 }
 
-.navbar > .container-fluid .navbar-brand {
-	margin-left: 30px;
+.navbar {
+	background-color: white;
+	padding: 12px 15px;
+
+	.nav-container {
+		margin: 0 auto;
+		max-width: 920px;
+
+		a {
+			span {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.navbar-header {
+		a {
+			color: black;
+
+			&:hover {
+				color: black;
+			}
+		}
+
+	}
+
+	.navbar-brand {
+		font-family: 'Satisfy', cursive;
+		font-size: 24px;
+	}
+
+	& > .container-fluid .navbar-brand {
+		margin-left: 30px;
+	}
 }
+
+
