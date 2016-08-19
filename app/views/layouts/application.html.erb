@@ -7,7 +7,7 @@
   <%= csrf_meta_tags %>
 </head>
 
-<body>
+<body class>
 	<nav class = "navbar navbar-default">
 		<div class = "nav-container">	
 			<div class="navbar-header">
@@ -34,7 +34,7 @@
 		</div>
 	</nav>	
 
-	<div class = "container">
+	<div class = "container <%= controller.controller_name %>">
 		<%= render 'shared/flash_message' %>
 		<%= yield %>
 	</div>

@@ -1,3 +1,49 @@
 // Place all the styles related to the Users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.users {
+	max-width: 920px;
+
+	.user {
+		margin-bottom: 45px;
+
+		.profile_picture {
+			display: inline-block;
+			width: 39%;
+
+			img {
+				width: 150px;
+				height: 150px;
+				border-radius: 100%;
+			}
+
+		}
+
+		.details {
+			display: inline-block;
+			width: 59%;
+
+			h3 {
+				display: inline-block;
+			}
+			.btn {
+				display: inline-block;
+			}
+		}
+	}
+
+	.posts {
+
+		.col-md-4 {
+			padding: 15px;
+
+			img {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
