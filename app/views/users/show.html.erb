@@ -10,8 +10,22 @@
 </div>
 <div class = "posts">
 	<% @user.posts.each do |post| %>
-		<div class = "col-md-4">
-			<%= image_tag(post.image.url) %>
+	<%= link_to post do %>
+		<div class = "post col-xs-4">
+			<%= image_tag(post.image.url(:medium)) %>
+			<div class = "bg-features">	
+				<div class = "features">
+					<div class = "likes">
+						<span class="glyphicon glyphicon-heart" aria-hidden="true"></span>
+						<%= post.votes_for.size %>
+					</div>
+					<div class = "comments">
+						<span class="glyphicon glyphicon-comment" aria-hidden="true"></span>
+						0
+					</div>
+				</div>
+			</div>
 		</div>
+	<% end %>
 	<% end %>
 </div>

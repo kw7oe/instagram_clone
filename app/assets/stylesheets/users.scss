@@ -35,15 +35,54 @@
 
 	.posts {
 
-		.col-md-4 {
-			padding: 15px;
+		a {
+			color: white;
+
+			&:hover {
+				color: white;
+			}
+		}
+
+		.post {
+			position: relative;
+		}
+
+		.col-xs-4 {
+			padding: 1%;
 
 			img {
 				display: block;
 				width: 100%;
 			}
+
+			&:hover .bg-features {
+				opacity: 1;
+			}
+		}
+
+		.bg-features {
+			position: absolute;
+			top: 3%; left: 3%;
+			width: 94%;
+			height: 94%;
+			background-color: rgba(0,0,0,0.5);
+			opacity: 0;
+
+			.features {
+				position: absolute;
+				top: 50%; left: 50%;
+				transform: translate(-50%, -50%);
+
+
+				.comments, .likes {
+					display: inline-block;
+					padding: 8px;
+					font-size: 18px;
+				}
+			}
 		}
 	}
+
 }
 
 
