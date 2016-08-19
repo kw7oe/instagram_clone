@@ -1,5 +1,8 @@
 <div class = "user">
-<%= @user.email %>
+<%= image_tag(@user.profile_picture.url) %>
+<%= @user.username %>
+<%= @user.biography %>
+<%= link_to "Edit Profile", edit_user_registration_path %>
 </div>
 <div class = "posts">
 	<% @user.posts.each do |post| %>
