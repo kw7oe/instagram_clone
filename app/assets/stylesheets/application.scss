@@ -57,4 +57,53 @@ body {
 	}
 }
 
+.feed {
+	border: 1px solid #E6E6E6;
+	border-radius: 3px;
+	background: white;
+	margin-bottom: 45px;
+
+	.user {
+		padding: 12px 15px;
+		display: flex;
+		align-items: center;
+
+		.profile_picture {
+			margin-right: 12px;
+			flex-grow: 0;
+
+			img {
+				width: 30px;
+				height: 30px;
+				border-radius: 100%;
+			}
+		}
+
+		.details {				
+			flex-grow: 2;
+
+			p {
+				margin: 0;
+			}
+		}
+
+		.time {
+			color: #999999;
+			flex-grow: 0;
+		}
+	}
+	
+
+	.image {
+		img {
+			width: 100%;
+			height: auto;
+		}
+	}
+
+	.comment {
+		padding: 12px 15px;
+	}
+}
+
 

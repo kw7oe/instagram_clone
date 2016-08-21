@@ -1,1 +1,7 @@
-<h1>Instagram Clone</h1>
+<% if !@feeds.empty? %>
+	<div class = "feeds col-xs-6 col-xs-offset-3">
+		<%= render partial: 'feed', collection: @feeds %>
+	</div>
+<% else %>	
+	<h1>Instagram Clone</h1>
+<% end %>

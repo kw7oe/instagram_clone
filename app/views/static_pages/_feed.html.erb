@@ -1,0 +1,9 @@
+<div class = "feed">
+	<%= render partial: 'shared/user_basic_info', object: feed.user, as: 'user', locals: { time: feed.created_at } %>
+	<div class = "image">
+		<%= image_tag(feed.image.url(:medium)) %>
+	</div>
+	<div class = "comment">
+		<strong><%= feed.votes_for.size %> like</strong>
+	</div>
+</div>

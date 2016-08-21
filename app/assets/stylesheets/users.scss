@@ -7,10 +7,11 @@
 
 	.user {
 		margin-bottom: 45px;
+		width: 100%;
 
 		.profile_picture {
 			display: inline-block;
-			width: 39%;
+			margin-right: 45px;
 
 			img {
 				width: 150px;
@@ -22,9 +23,9 @@
 
 		.details {
 			display: inline-block;
-			width: 59%;
+			width: 55%;
 
-			#follow_form {
+			[id^="follow_form"] {
 				display: inline-block;
 			}
 
@@ -118,7 +119,7 @@
 
 			.profile_picture {
 				display: inline-block;
-				width: inherit;
+				margin-right: 0;
 
 				img {
 					width: 50px;
