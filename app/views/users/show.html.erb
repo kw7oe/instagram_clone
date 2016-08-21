@@ -7,18 +7,18 @@
 		<% if current_user == @user %>
 			<%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-default edit' %>
 		<% else %>
-			<%= render 'follow_form' %>
+			<%= render 'follow_form', user: @user %>
 		<% end %>
 		<p><%= @user.biography %></p>	
-		<div class = "more_details">
-			<p><strong><%= @user.posts.size %></strong> posts </p>
-			<a><strong id = "following"><%= @user.following.count %></strong> following</a>
-			<a><strong id = "followers"><%= @user.followers.count %></strong> followers</a>
-		</div>
+		<ul>
+			<li><strong><%= @user.posts.size %></strong> posts </li>
+			<li><a href = "<%= following_user_path(@user) %>"><strong id = "following"><%= @user.following.count %></strong> following</a></li>
+			<li><a href = "<%= followers_user_path(@user) %>"><strong id = "followers"><%= @user.followers.count %></strong> followers</a></li>
+		</ul>
 	</div>
 </div>
 <div class = "posts">
-	<% @user.posts.each do |post| %>
+	<% @posts.each do |post| %>
 		<%= link_to post do %>
 			<div class = "col-xs-4">
 					<div class = "post">
