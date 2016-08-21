@@ -6,14 +6,15 @@ Rails.application.routes.draw do
       put "unlike", to: "posts#unlike"
     end
   end
-  resources :relationships
-  get 'static_pages/home'
+
+  resources :relationships, only: [:create, :destroy]
   devise_for :users 
-  resources :users, only: [:show] do 
+    resources :users, only: [:show] do 
     member do 
       get :following, :followers
     end
   end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

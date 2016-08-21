@@ -5,13 +5,16 @@
 	<div class = "details">
 		<h3><%= @user.username %></h3>
 		<% if current_user == @user %>
-		<%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-default edit' %>
+			<%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-default edit' %>
 		<% else %>
 			<%= render 'follow_form' %>
 		<% end %>
 		<p><%= @user.biography %></p>	
-		<p><%= @user.following.count %></p>
-		<p><%= @user.followers.count %></p>	
+		<div class = "more_details">
+			<p><strong><%= @user.posts.size %></strong> posts </p>
+			<a><strong id = "following"><%= @user.following.count %></strong> following</a>
+			<a><strong id = "followers"><%= @user.followers.count %></strong> followers</a>
+		</div>
 	</div>
 </div>
 <div class = "posts">

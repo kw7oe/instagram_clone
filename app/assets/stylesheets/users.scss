@@ -24,11 +24,30 @@
 			display: inline-block;
 			width: 59%;
 
+			#follow_form {
+				display: inline-block;
+			}
+
 			h3 {
 				display: inline-block;
 			}
 			.btn {
 				display: inline-block;
+			}
+
+			.more_details {
+				p {
+					display: inline-block;
+				}
+
+				a {
+					color: black;
+					cursor: pointer;
+
+					&:hover {
+						color:black;
+					}
+				}
 			}
 		}
 	}
