@@ -95,6 +95,23 @@ body {
 	
 
 	.image {
+		position: relative;
+
+		.like {
+			position: absolute;
+			color: white;
+			font-size: 5em;
+			top: 50%; left: 50%;
+			transform: translate(-50%, -50%);
+
+			&.show { 
+				opacity: 1;
+			}
+
+			&.hide {				
+				opacity: 0;
+			}
+		}
 		img {
 			width: 100%;
 			height: auto;

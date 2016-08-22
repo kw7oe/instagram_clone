@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  resources :posts do 
+  resources :posts, except: [:index] do 
     member do 
       put "like", to: "posts#like"
       put "unlike", to: "posts#unlike"
