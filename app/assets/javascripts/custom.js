@@ -4,5 +4,6 @@ $(document).ready(function() {
 	  setTimeout(function() {
 	  	$('.like').removeClass("show").addClass("hide");
 	  }, 1000);
+	  $(this).parent().next(".post_details").find(".user_action").find("a").click()
 	});
 })

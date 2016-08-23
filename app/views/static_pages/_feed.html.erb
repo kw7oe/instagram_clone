@@ -4,8 +4,20 @@
 		<div class = "like hide"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></div>
 		<%= image_tag(feed.image.url(:medium)) %>
 	</div>
-	<div class = "comment">
-		<strong><%= feed.votes_for.size %> like</strong>
+	<div class = "post_details">
+		<strong id = "post_<%= feed.id %>"><%= pluralize(feed.votes_for.size, "like") %></strong>
+		<div class = "comment_section">
+			This is the comment section
+		</div><hr/>
+		<div class = "user_action">
+			<span class = "like_button_<%= feed.id %>">
+				<% if current_user.voted_for? feed %>
+					<%= render partial: 'unlike', object: feed, as: 'feed' %>
+				<% else %>
+					<%= render partial: 'like', object: feed, as: 'feed' %>
+				<% end %>
+			</span>
+		</div>
 	</div>
 </div>
 

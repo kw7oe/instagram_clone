@@ -58,12 +58,18 @@ class PostsController < ApplicationController
 
   def like
     @post.liked_by current_user 
-    redirect_to @post
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js
+    end
   end
 
   def unlike
     @post.unliked_by current_user
-    redirect_to @post
+    respond_to do |format|
+      format.html { redirect_to @post }
+      format.js
+    end
   end
 
   private

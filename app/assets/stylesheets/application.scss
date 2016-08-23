@@ -118,8 +118,20 @@ body {
 		}
 	}
 
-	.comment {
+	.post_details {
 		padding: 12px 15px;
+
+		.user_action {
+			.glyphicon-heart {
+				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			}
+			.liked {
+				color: #FF6666;
+			}
+			.unliked {
+				color: white;
+			}
+		}
 	}
 }
 
