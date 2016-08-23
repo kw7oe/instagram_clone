@@ -4,6 +4,6 @@ $(document).ready(function() {
 	  setTimeout(function() {
 	  	$('.like').removeClass("show").addClass("hide");
 	  }, 1000);
-	  $(this).parent().next(".post_details").find(".user_action").find("a").click()
+	  $(this).parent().find(".post_details").find("span[class^='like_button']").find("a").click()
 	});
 })
