@@ -1,0 +1,4 @@
+<% post.comments.recent.each do |comment| %>
+	<p><strong><%= comment.user.username %></strong> <%= comment.comment %></p>
+	<%= render partial: 'comments/destroy', object: comment, as: 'comment' %>
+<% end %>

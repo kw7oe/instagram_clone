@@ -5,9 +5,14 @@
 		<%= image_tag(feed.image.url(:medium)) %>
 	</div>
 	<div class = "post_details">
-		<strong id = "post_<%= feed.id %>"><%= pluralize(feed.votes_for.size, "like") %></strong>
+		<p><strong id = "post_<%= feed.id %>"><%= pluralize(feed.votes_for.size, "like") %></strong></p>
 		<div class = "comment_section">
-			This is the comment section
+			<% if !feed.caption.empty? %>
+				<p><strong><%= feed.user.username %></strong> <%= feed.caption %></p>
+			<% end %>
+			<% if feed.comments.any? %>
+				<%= render partial: 'comments', object: feed, as: 'post' %>
+			<% end %>
 		</div><hr/>
 		<div class = "user_action">
 			<span class = "like_button_<%= feed.id %>">
@@ -16,6 +21,9 @@
 				<% else %>
 					<%= render partial: 'like', object: feed, as: 'feed' %>
 				<% end %>
+			</span>
+			<span class = "comment_button">
+				<%= render partial: 'comments/create', object: feed, as: 'feed' %>
 			</span>
 		</div>
 	</div>

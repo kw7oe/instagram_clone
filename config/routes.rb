@@ -6,10 +6,10 @@ Rails.application.routes.draw do
       put "unlike", to: "posts#unlike"
     end
   end
-
+  resources :comments, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   devise_for :users 
-    resources :users, only: [:show] do 
+  resources :users, only: [:show] do 
     member do 
       get :following, :followers
     end
