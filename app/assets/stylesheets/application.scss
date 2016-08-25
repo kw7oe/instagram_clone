@@ -121,9 +121,13 @@ body {
 	.post_details {
 		padding: 12px 15px;
 
-		.comment_section {
+		[id^="comment_section"] {
 			a {
-				color: #B3B3B3;
+				color: black;
+
+				&.delete {
+					color: #B3B3B3;
+				}
 
 				&:hover {
 					color: black;
@@ -153,7 +157,7 @@ body {
 			}			
 		}
 
-		.user_action {
+		[id^="user_action"] {
 			display: flex;
 			align-items: center;
 
@@ -177,7 +181,7 @@ body {
 				}
 			}
 
-			[class^="like_button"] {
+			[id^="like_button"] {
 				flex-grow: 0;
 				.glyphicon-heart {
 					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;

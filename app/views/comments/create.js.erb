@@ -1,0 +1,2 @@
+$("#comment_section_<%= @post.id %>").html("<%= j render partial: 'comments', object: @post, as: 'post' %>")
+$("#user_action_<%= @post.id %>").find("#new_comment")[0].reset()

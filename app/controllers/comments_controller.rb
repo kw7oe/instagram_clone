@@ -7,14 +7,17 @@ class CommentsController < ApplicationController
 		@comment.save
 		respond_to do |format|
 			format.html { redirect_to root_url }
+			format.js
 		end
 	end
 
-	def destroy
+	def destroy		
 		@comment = Comment.find(params[:id])
+		@post = Post.find(@comment.commentable_id) # post_id
 		@comment.destroy
 		respond_to do |format|
 			format.html { redirect_to root_url }
+			format.js
 		end
 	end
 

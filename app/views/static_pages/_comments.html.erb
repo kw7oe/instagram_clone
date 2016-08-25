@@ -1,6 +1,0 @@
-<% post.comments.recent.each do |comment| %>
-	<p><strong><%= comment.user.username %></strong><span class = "comment"><%= comment.comment %></span>
-	<% if comment.user_id == current_user.id || post.user_id == current_user.id %>
-	<%= render partial: 'comments/destroy', object: comment, as: 'comment' %></p>
-	<% end %>
-<% end %>

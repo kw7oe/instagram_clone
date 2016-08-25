@@ -1,2 +1,2 @@
 $("#post_<%= @post.id %>").html("<%= pluralize(@post.votes_for.size, "like") %>")
-$(".like_button_<%= @post.id %>").html("<%= j render partial: 'static_pages/like', object: @post, as: 'feed' %>")
+$("#like_button_<%= @post.id %>").html("<%= j render partial: 'static_pages/like', object: @post, as: 'feed' %>")
