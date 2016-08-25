@@ -121,16 +121,74 @@ body {
 	.post_details {
 		padding: 12px 15px;
 
+		.comment_section {
+			a {
+				color: #B3B3B3;
+
+				&:hover {
+					color: black;
+					text-decoration: none;
+				}
+			}
+
+			p {
+				display: flex;
+
+				strong {
+					flex-grow: 0;
+					margin-right: 4px;
+				}
+
+				.comment {
+					flex-grow: 2;
+				}
+				
+				.a {
+					flex-grow: 0;
+				}
+
+				.delete:before {
+					content: '\2715';
+				}
+			}			
+		}
+
 		.user_action {
-			.glyphicon-heart {
-				text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+			display: flex;
+			align-items: center;
+
+			.new_comment {
+				display: inline-block;
+				margin-left: 12px;
+				flex-grow: 2;
+
+				.field {
+					margin: 0;
+				}
+				
+				.comment_input {
+					padding: 6px 12px;
+					width: 100%;
+					border: none;
+
+					&:focus {
+						outline-style: none;
+					}
+				}
 			}
-			.liked {
-				color: #FF6666;
-			}
-			.unliked {
-				color: white;
-			}
+
+			[class^="like_button"] {
+				flex-grow: 0;
+				.glyphicon-heart {
+					text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+				}
+				.liked {
+					color: #FF6666;
+				}
+				.unliked {
+					color: white;
+				}
+			}			
 		}
 	}
 }
