@@ -1,9 +1,13 @@
-<div class = "user">
+<div class = "user_basic_info">
 	<div class = "profile_picture">
 		<%= image_tag(user.profile_picture.url) %>
 	</div>
 	<div class = "details">
 		<p><%= user.username %></p>
 	</div>
-	<div class = "time"><%= time_ago(time) %></div>
+	<% if time %>
+		<div class = "time"><%= time_ago(time) %></div>
+	<% else %>
+		<%= render 'users/follow_form', user: user %>
+	<% end %>
 </div>

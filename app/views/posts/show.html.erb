@@ -1,17 +1,4 @@
-<%= image_tag(@post.image.url(:medium)) if @post.image %>
-<p>
-  <strong>Caption:</strong>
-  <%= @post.caption %>
-</p>
-<p><%= @post.votes_for.size %></p>
+<div class = "col-xs-6 col-xs-offset-3">
+	<%= render @post %>
+</div>
 
-<% if user_signed_in? %>
-<% if current_user.voted_for? @post %>
-	<%= link_to 'Unlike', unlike_post_path, method: :put %>
-<% else %>
-	<%= link_to "Like", like_post_path, method: :put %>
-<% end %> |
-<%= link_to "Delete", @post, method: :delete %> |
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<% end %>
-<%= link_to 'Back', :back %>

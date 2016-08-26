@@ -107,42 +107,6 @@
 			}
 		}
 	}
-
-	.show_follow {
-		background-color: white;
-		border-radius: 15px;
-		border: 1px solid #B3B3B3;
-		padding: 12px 15px;
-
-		.user {
-			margin: 12px;
-
-			.profile_picture {
-				display: inline-block;
-				margin-right: 0;
-
-				img {
-					width: 50px;
-					height: 50px;
-					border-radius: 100%;
-				}
-
-			}
-
-			.details {
-				display: inline-block;
-
-				p {
-					display: inline-block;
-				}
-
-				[id^="follow_form"] {
-					display: inline-block;
-				}
-			}
-		}
-	}
-
 }
 
 

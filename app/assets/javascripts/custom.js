@@ -1,4 +1,4 @@
-$(document).ready(function() {
+var doubleClickToLike = function() {
 	$( ".image" ).dblclick(function() {		
 	  $(this).children('.like').removeClass("hide").addClass("show");
 	  setTimeout(function() {
@@ -6,4 +6,7 @@ $(document).ready(function() {
 	  }, 1000);
 	  $(this).parent().find(".post_details").find("span[id^='like_button']").find("a").click()
 	});
-})
+};
+
+$(document).ready(doubleClickToLike)
+document.addEventListener('turbolinks:load', doubleClickToLike)

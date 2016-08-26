@@ -1,13 +1,5 @@
-<div class = "show_follow col-xs-6 col-xs-offset-3">
+<div class = "box_container col-xs-6 col-xs-offset-3">
 	<% @users.each do |user| %>
-	<div class = "user">
-		<div class = "profile_picture">
-			<%= image_tag(user.profile_picture.url) %>
-		</div>
-		<div class = "details">
-			<p><%= user.username %></p>
-			<%= render 'follow_form', user: user %>
- 		</div>
- 	</div>
+	<%= render partial: 'shared/user_basic_info', object: user, as: 'user', locals: { time: nil } %>
 	<% end %>
 </div>
