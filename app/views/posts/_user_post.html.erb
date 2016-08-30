@@ -1,0 +1,32 @@
+<div class = "post">
+	<div class = "image left" id = "target_<%= post.id %>">
+		<div class = "like hide"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></div>
+		<%= image_tag(post.image.url(:medium)) %>
+	</div>
+	<div class = "right">
+		<%= render partial: 'shared/user_basic_info', object: post.user, as: 'user', locals: { time: post.created_at } %>
+		<hr/>
+		<div class = "post_details">
+			<p><strong id = "post_<%= post.id %>"><%= pluralize(post.votes_for.size, "like") %></strong></p>
+			<% if !post.caption.empty? %>
+				<p><strong><%= post.user.username %></strong> <%= post.caption %></p>
+			<% end %>
+			<div id = "comment_section_<%= post.id %>">
+				<% if post.comments.any? %>
+					<%= render partial: 'comments/comments', object: post, as: 'post' %>
+				<% end %>
+			</div>
+			
+		</div>
+	</div>
+	<div id = "user_action_<%= post.id %>">
+				<span id = "like_button_<%= post.id %>">
+					<% if current_user.voted_for? post %>
+						<%= render partial: 'posts/unlike', object: post, as: 'post' %>
+					<% else %>
+						<%= render partial: 'posts/like', object: post, as: 'post' %>
+					<% end %>
+				</span>			
+				<%= render partial: 'comments/create', object: post, as: 'post' %>
+			</div>
+</div>

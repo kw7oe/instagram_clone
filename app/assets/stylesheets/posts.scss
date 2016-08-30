@@ -1,3 +1,22 @@
-// Place all the styles related to the posts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.posts {
+
+	.post {
+		.left {
+			position: relative;
+			top: 0; left: 0;
+			width: 60%;
+		}
+
+		.right {
+			position: absolute;
+			top: 0; left: 60%;
+			width: 38%;
+		}	
+
+		[id^="user_action"] {
+			position: absolute;
+			bottom: 10%; left: 60%;
+			width: 38%;
+		}
+	}
+}

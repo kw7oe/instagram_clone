@@ -1,0 +1,6 @@
+<% if controller.controller_name == "static_pages" %>
+	<%= render partial: 'posts/feed_post', object: post, as: 'post' %>
+<% else %>
+	<%= render partial: 'posts/user_post', object: post, as: 'post' %>
+<% end %>
+	

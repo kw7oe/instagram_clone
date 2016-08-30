@@ -8,6 +8,8 @@
 </head>
 
 <body class>
+
+<% if current_user %>
 	<nav class = "navbar navbar-default">
 		<div class = "nav-container">	
 			<div class="navbar-header">
@@ -21,18 +23,16 @@
     	</div>
 			<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">			
 				<ul class = "nav navbar-nav navbar-right">
-				<% if current_user %>
 					<li><%= link_to '<span class="glyphicon glyphicon-plus" aria-hidden="true"></span>'.html_safe, new_post_path %></li>
 					<li><%= link_to '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>'.html_safe, user_path(current_user) %></li>
 					<li><%= link_to "Logout", destroy_user_session_path, method: :delete, data: { confirm: "Are you sure?"} %></li>
-				<% else %>
-					<li><%= link_to "Login", new_user_session_path %></li>
-					<li><%= link_to "Sign Up", new_user_registration_path %></li>
-				<% end %>
 				</ul>			
 			</div>
 		</div>
 	</nav>	
+<% else %>
+<br/><br/>
+<% end %>
 
 	<div class = "container <%= controller.controller_name %>">
 		<%= render 'shared/flash_message' %>
