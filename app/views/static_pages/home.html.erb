@@ -3,5 +3,9 @@
 		<%= render @posts %>
 	</div>
 <% else %>	
-	<%= render 'landing' %>
+	<% if user_signed_in? %>
+		No Feeds Available Yet.
+	<% else %>
+		<%= render 'landing' %>
+	<% end %>
 <% end %>

@@ -2,7 +2,7 @@
 	<%= render partial: 'shared/user_basic_info', object: post.user, as: 'user', locals: { time: post.created_at } %>
 	<div class = "image" id = "target_<%= post.id %>">
 		<div class = "like hide"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></div>
-		<%= image_tag(post.image.url(:medium)) %>
+		<%= image_tag(post.image.url(:thumb)) %>
 	</div>
 	<div class = "post_details">
 		<p><strong id = "post_<%= post.id %>"><%= pluralize(post.votes_for.size, "like") %></strong></p>

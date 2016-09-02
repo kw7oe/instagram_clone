@@ -1,7 +1,7 @@
 <div class = "post">
 	<div class = "image left" id = "target_<%= post.id %>">
 		<div class = "like hide"><span class="glyphicon glyphicon-heart" aria-hidden="true"></span></div>
-		<%= image_tag(post.image.url(:medium)) %>
+		<%= image_tag(post.image.url(:thumb)) %>
 	</div>
 	<div class = "right">
 		<%= render partial: 'shared/user_basic_info', object: post.user, as: 'user', locals: { time: post.created_at } %>

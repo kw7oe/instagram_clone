@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160824023734) do
+ActiveRecord::Schema.define(version: 20160902021751) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "title",            limit: 50, default: ""
@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 20160824023734) do
     t.text     "caption"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
-    t.string   "image_file_name"
+    t.string   "image"
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
@@ -65,7 +65,7 @@ ActiveRecord::Schema.define(version: 20160824023734) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                                null: false
     t.datetime "updated_at",                                null: false
-    t.string   "profile_picture_file_name"
+    t.string   "profile_picture"
     t.string   "profile_picture_content_type"
     t.integer  "profile_picture_file_size"
     t.datetime "profile_picture_updated_at"

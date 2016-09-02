@@ -1,11 +1,12 @@
-class User < ActiveRecord::Base
+class User < ActiveRecord::Base  
+  mount_uploader :profile_picture, ImageUploader
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :posts
-  has_attached_file :profile_picture, styles: { medium: "300x300>" }, default_url: "missing_user.jpg"
-  validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
+  has_many :posts  
+  # has_attached_file :profile_picture, styles: { medium: "300x300>" }, default_url: "missing_user.jpg"
+  # validates_attachment_content_type :profile_picture, content_type: /\Aimage\/.*\Z/
   acts_as_voter
   has_many :active_relationships, class_name: "Relationship",
   																foreign_key: "follower_id",
