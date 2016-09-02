@@ -25,6 +25,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave'
 gem 'carrierwave-dropbox'
+gem 'paperclip'
 gem 'mini_magick'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'acts_as_commentable'
