@@ -5,7 +5,7 @@
 		<% end %>
 		<span class = "comment"><%= comment.comment %></span>
 		<% if comment.user_id == current_user.id || post.user_id == current_user.id %>
-		<%= render partial: 'comments/destroy', object: comment, as: 'comment' %>
+		<%= render partial: 'comments/destroy', object: comment, as: 'comment' %>		
+		<% end %>
 	</p>
-	<% end %>
 <% end %>

@@ -16,4 +16,8 @@
 !/log/.keep
 /tmp
 
+# Ignore Test Environment Images
 /public/uploads
+
+# Ignore DS_Store
+.DS_Store

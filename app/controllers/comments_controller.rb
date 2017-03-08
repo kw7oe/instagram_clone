@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
 
 	def destroy		
 		@comment = Comment.find(params[:id])
-		@post = Post.find(@comment.commentable_id) # post_id
+		@post = Post.find(@comment.commentable_id) # post_id for AJAX response
 		@comment.destroy
 		respond_to do |format|
 			format.html { redirect_to root_url }

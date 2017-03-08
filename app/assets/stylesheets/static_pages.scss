@@ -2,8 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.box_container {
-	margin-bottom: 24px;
-	padding: 12px 72px !important;
+.static_pages {
+	.box_container {
+		background-color: #FAFAFA;
+	}
+	
+	.home {
+		img {
+			width: 100%;
+		}
+	}
+
+	.sign-up {
+		padding-top: 15%;
+		padding-bottom: 15%;
+	}
 }
+
 
